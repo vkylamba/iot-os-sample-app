@@ -1,4 +1,4 @@
-#define OVERRIDE_SYSTEM_DEFINATIONS
+// #define OVERRIDE_SYSTEM_DEFINATIONS
 
 /* GENERAL CONFIG */
 #define LIB_VERSION "5.0.0"
@@ -30,7 +30,7 @@
 #define CONFIGURATOR_AP_STATIC_PASS "IOT-APP-OS"
 
 /* FS */
-#define SD_MODULE_ACTIVE
+// #define SD_MODULE_ACTIVE
 #define SYSTEM_LOG_DIR                "var/log/"    // System logs directory
 #define SYSTEM_FILENAME_TEMPLATE      "SYS%05d.log" // Template for system log file name
 #define SYSTEM_FULL_FILEPATH_TEMPLATE "var/log/SYS%05d.log" // Template for system log file full path and name

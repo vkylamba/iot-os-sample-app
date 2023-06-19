@@ -1,7 +1,7 @@
 #include "config.h"
 #include <IoTaaP_OS.h>
 
-IoTaaP_OS iotaapOs("1.0.3");
+IoTaaP_OS iotaapOs("1.1.1");
 char sharedBuffer1[100];
 char sharedBuffer2[50];
 
@@ -23,7 +23,7 @@ void callback(char *topic, byte *message, unsigned int length)
 
 void setup()
 {
-  char deviceId[30];     // Char array used to store system parameter
+  char deviceId[100];     // Char array used to store system parameter
 
   iotaapOs.start(); // Start IoTaaP OS
 
@@ -33,22 +33,30 @@ void setup()
   iotaapOs.writeToSystemLogs("Device started"); // Write data to system log using 'USER' tag
 
   iotaapOs.getSystemParameter("device_id", deviceId); // Get 'device_id' parameter from 'default.cfg'
-  Serial.println("device_id parameter:");
-  Serial.println(deviceId);
+  Serial.printf("device_id: %s\n", deviceId);
+  iotaapOs.getSystemParameter("mqtt_server", deviceId); // Get 'device_id' parameter from 'default.cfg'
+  Serial.printf("mqtt_server: %s\n", deviceId);
+  iotaapOs.getSystemParameter("mqtt_user", deviceId); // Get 'device_id' parameter from 'default.cfg'
+  Serial.printf("mqtt_user: %s\n", deviceId);
+  // if (strlen(mqtt_user) < 3) {
+  //   iotaapOs.setSystemParameter("mqtt_user", "dev"); // Get 'device_id' parameter from 'default.cfg'
+  // }
 
-  iotaapOs.basicSubscribe("device_commands"); // Subscribe to /<username>/dummy_topic
+  // iotaapOs.basicSubscribe("device_commands"); // Subscribe to /<username>/dummy_topic
 
   // iotaapOs.basicSubscribe("receiving_topic"); // Subscribe to /<username>/receiving_topic
   // Every message received on this topic will trigger callback
 
   // iotaapOs.basicUnsubscribe("dummy_topic"); // Unsubscribe from /<username>/dummy_topic
 
-  iotaapOs.checkForUpdates(); // Manually check for updates at startup
-
   if (!iotaapOs.isConfiguratorActive()) {
     iotaapOs.startMeters();
     iotaapOs.startModbus();
   }
+
+  // iotaapOs.checkForUpdates(false);
+
+  iotaapOs.startLcd();
 
   vTaskDelay(1000);
 }
@@ -67,5 +75,7 @@ void loop()
   // iotaapOs.basicCloudPublish(sharedBuffer1, "sync");  // Publish simple (escaped) JSON to: /<username>/simple_topic
   // Serial.println("basicCloudPublish-1");
   // Serial.println(sharedBuffer1);
-  vTaskDelay(10 * 1000);
+  Serial.println("ping");
+  vTaskDelay(100 * 1000);
+  // iotaapOs.checkForUpdates(false);
 }
