@@ -1,12 +1,17 @@
 
 meters = {
+    "solar_meter": [
+        { "raw": 0, "actual": 0.0 },
+        { "raw": 443, "actual": 100.0 },
+    ],
     "dc_meter": [
         # { "raw": 1984, "actual": 9.0 },
         # { "raw": 2021, "actual": 16.0 },
         # { "raw": 2045, "actual": 13.6 },
         # { "raw": 2056, "actual": 14.0 },
-        { "raw": (1909-1909), "actual": 0.0 },
+        { "raw": (1895-1909), "actual": 0.0 },
         { "raw": (1932-1909), "actual": 5.5 },
+        { "raw": (2087-1909), "actual": 30.0 },
     ],
     "grid_meter": [
         { "raw": 44, "actual": 1.98 },
