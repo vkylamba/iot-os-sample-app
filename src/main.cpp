@@ -1,7 +1,7 @@
 #include "config.h"
 #include <IoTaaP_OS.h>
 
-IoTaaP_OS iotaapOs("1.1.1");
+IoTaaP_OS iotaapOs("1.1.5");
 char sharedBuffer1[100];
 char sharedBuffer2[50];
 

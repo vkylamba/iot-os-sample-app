@@ -2,16 +2,32 @@
 meters = {
     "solar_meter": [
         { "raw": 0, "actual": 0.0 },
-        { "raw": 443, "actual": 100.0 },
+        # { "raw": 443, "actual": 100.0 },
+        # { "raw": 500, "actual": 108.0 },
+        # { "raw": 520, "actual": 114.0 },
+        { "raw": 533, "actual": 110.0 },
+        { "raw": 536, "actual": 112.0 },
     ],
     "dc_meter": [
-        # { "raw": 1984, "actual": 9.0 },
-        # { "raw": 2021, "actual": 16.0 },
-        # { "raw": 2045, "actual": 13.6 },
-        # { "raw": 2056, "actual": 14.0 },
-        { "raw": (1895-1909), "actual": 0.0 },
-        { "raw": (1932-1909), "actual": 5.5 },
-        { "raw": (2087-1909), "actual": 30.0 },
+        # From the handheld clamp meter
+        # { "raw": (1984-1909), "actual": 9.0 },
+        # { "raw": (2021-1909), "actual": 16.0 },
+        # { "raw": (2045-1909), "actual": 13.6 },
+        # { "raw": (2056-1909), "actual": 14.0 },
+
+        # From Inverter's meter
+        # { "raw": (1895-1909), "actual": 0.0 },
+        # { "raw": (1932-1909), "actual": 5.5 },
+        # { "raw": (2087-1909), "actual": 30.0 },
+
+        # From the new solar meter
+        { "raw": (1909-1909), "actual": 0.0 },
+        # { "raw": (1921-1909), "actual": 3.74 },
+        # { "raw": (1945-1909), "actual": 5.39 },
+        # { "raw": (1946-1909), "actual": 5.53 },
+        # { "raw": (1948-1909), "actual": 5.89 },
+        # { "raw": (1949-1909), "actual": 5.69 },
+        { "raw": (1957-1909), "actual": 6.39 },
     ],
     "grid_meter": [
         { "raw": 44, "actual": 1.98 },
